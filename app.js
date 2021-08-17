@@ -26,10 +26,17 @@ function calculateTotal(){
     const phoneTotal = getInputValue('phone') * 1219;
     const caseTotal = getInputValue('case') * 59;
     const subTotal = phoneTotal + caseTotal;
+    const tax = subTotal / 10;
+    const total = subTotal + tax ; 
     //update sub-total
     const productSubInput =  document.getElementById('sub-total');
-    console.log(productSubInput);
     productSubInput.innerText = subTotal ;
+     //update tax
+     const productTaxInput =  document.getElementById('tax-amount');
+     productTaxInput.innerText = tax ;
+      //update total
+    const productTotalInput =  document.getElementById('total-price');
+    productTotalInput.innerText = total ;
 }
 //handle phone event 
 document.getElementById('phone-plus').addEventListener('click',function(){
